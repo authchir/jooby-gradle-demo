@@ -24,6 +24,7 @@ dependencies {
   compile "org.jooby:jooby:$joobyVersion"
   compile "org.jooby:jooby-netty:$joobyVersion"
   compile "org.jooby:jooby-assets:$joobyVersion"
+  compile "org.jooby:jooby-assets-babel:$joobyVersion"
 }
 
 joobyRun {
