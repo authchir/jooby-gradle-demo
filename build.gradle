@@ -1,0 +1,39 @@
+def joobyVersion = '1.0.3'
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath "org.jooby:jooby-gradle-plugin:1.0.3"
+  }
+}
+
+apply plugin: 'application'
+apply plugin: 'jooby'
+
+sourceCompatibility = 1.8
+mainClassName = "org.jooby.gradleDemo.Main"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.jooby:jooby:$joobyVersion"
+  compile "org.jooby:jooby-netty:$joobyVersion"
+  compile "org.jooby:jooby-assets:$joobyVersion"
+}
+
+joobyRun {
+  mainClassName = "$mainClassName"
+  compiler = 'on'
+  includes = ['**/*.class', '**/*.conf', '**/*.properties']
+  excludes = []
+  logLevel = 'info'
+}
+
+sourceSets.main.resources {
+  srcDirs = ["conf", "public"]
+}
