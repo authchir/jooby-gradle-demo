@@ -41,6 +41,7 @@ dependencies {
   compile "org.jooby:jooby-netty:$joobyVersion"
   compile "org.jooby:jooby-assets:$joobyVersion"
   compile "org.jooby:jooby-assets-babel:$joobyVersion"
+  compile "com.eclipsesource.j2v8:j2v8_linux_x86_64:4.5.0"
 }
 
 joobyRun {
